@@ -3,4 +3,4 @@ packages:
   - core/*
   - utils/*
   - first-party/*
-  - third-party/*
+  - models/**
