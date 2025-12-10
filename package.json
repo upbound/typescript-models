@@ -1,17 +1,18 @@
 {
-  "name": "@kubernetes-models/monorepo",
+  "name": "@crossplane-models/monorepo",
   "version": "0.0.0",
   "private": true,
-  "description": "Kubernetes models",
+  "description": "Crossplane ecosystem models",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tommy351/kubernetes-models-ts.git"
+    "url": "https://github.com/upbound/typescript-models.git"
   },
-  "homepage": "https://github.com/tommy351/kubernetes-models-ts",
-  "author": "Tommy Chen <tommy351@gmail.com>",
+  "homepage": "https://github.com/upbound/typescript-models.git",
+  "author": "Crossplane Maintainers  <info@crossplane.io>",
   "license": "MIT",
   "keywords": [
-    "kubernetes"
+    "kubernetes",
+    "crossplane"
   ],
   "scripts": {
     "lint": "npm-run-all lint:*",
@@ -68,5 +69,5 @@
       "utils/*/package.json"
     ]
   },
-  "packageManager": "pnpm@7.33.0"
+  "packageManager": "pnpm@10.25.0"
 }

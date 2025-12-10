@@ -14,17 +14,23 @@ const rootDir = join(__dirname, "..");
       demandOption: true,
       description: "Package name"
     })
+    .option("organization", {
+      type: "string",
+      demandOption: true,
+      description: "Organization"
+    })
     .option("description", {
       type: "string",
       description: "Package description"
     })
     .option("author", {
       type: "string",
+      default: "Crossplane Maintainers <info@crossplane.io>",
       description: "Package author"
     })
     .parse();
 
-  const pkgDir = join(rootDir, "third-party", args.name);
+  const pkgDir = join(rootDir, "models", args.organization, args.name);
 
   try {
     await stat(pkgDir);
@@ -34,16 +40,16 @@ const rootDir = join(__dirname, "..");
   }
 
   const pkgJson = {
-    name: `@kubernetes-models/${args.name}`,
+    name: `@crossplane-models/${args.name}`,
     version: "0.0.0",
     description: args.description,
     repository: {
       type: "git",
-      url: "https://github.com/tommy351/kubernetes-models-ts.git"
+      url: "https://github.com/upbound/typescript-models.git"
     },
-    homepage: `https://github.com/tommy351/kubernetes-models-ts/tree/master/third-party/${args.name}`,
+    homepage: `https://github.com/upbound/typescript-models/tree/master/models/${args.organization}/${args.name}`,
     author: args.author,
-    license: "MIT",
+    license: "Apache-2.0",
     main: "index.js",
     module: "index.mjs",
     types: "index.d.ts",
@@ -78,7 +84,7 @@ const rootDir = join(__dirname, "..");
   };
 
   const tsConfig = {
-    extends: "../../tsconfig.build.json",
+    extends: "../../../tsconfig.build.json",
     compilerOptions: {
       outDir: "dist",
       sourceMap: false
