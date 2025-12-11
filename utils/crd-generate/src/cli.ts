@@ -1,6 +1,8 @@
-import yargs from "yargs";
+import yargs from "yargs/yargs";
 import { readInput } from "@kubernetes-models/read-input";
 import { generate, GenerateOptions } from "./generate";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 async function readFiles(paths: string[]): Promise<string> {
   const documents: string[] = [];
@@ -13,24 +15,37 @@ async function readFiles(paths: string[]): Promise<string> {
   return documents.join("\n---\n");
 }
 
+function loadPkgConf(): Record<string, any> {
+  try {
+    const pkgPath = join(process.cwd(), "package.json");
+    const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+    return pkg["crd-generate"] || {};
+  } catch {
+    return {};
+  }
+}
+
 export async function run(): Promise<void> {
-  const args = await yargs
-    .pkgConf("crd-generate")
+  const pkgConf = loadPkgConf();
+  const args = await yargs(process.argv.slice(2))
     .option("input", {
       type: "array",
       describe: "Path of the input file or URL",
       string: true,
-      demandOption: true
+      demandOption: true,
+      default: pkgConf.input
     })
     .option("output", {
       type: "string",
       describe: "Path of output files",
-      demandOption: true
+      demandOption: true,
+      default: pkgConf.output
     })
     .option("yamlVersion", {
       type: "string",
       describe: "YAML version.",
-      choices: ["1.0", "1.1", "1.2"]
+      choices: ["1.0", "1.1", "1.2"],
+      default: pkgConf.yamlVersion
     })
     .parse();
 
@@ -42,7 +57,7 @@ export async function run(): Promise<void> {
     });
   } catch (err) {
     console.error(err);
-    // eslint-disable-next-line no-process-exit
+
     process.exit(1);
   }
 }

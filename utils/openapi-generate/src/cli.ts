@@ -1,7 +1,9 @@
-import yargs from "yargs";
+import yargs from "yargs/yargs";
 import { readInput } from "@kubernetes-models/read-input";
 import { generate } from "./generate";
 import { mergeOpenAPISpecs } from "./utils";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 async function readFiles(paths: string[]): Promise<string> {
   const contents: string[] = [];
@@ -16,19 +18,31 @@ async function readFiles(paths: string[]): Promise<string> {
   return JSON.stringify(spec);
 }
 
+function loadPkgConf(): Record<string, any> {
+  try {
+    const pkgPath = join(process.cwd(), "package.json");
+    const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+    return pkg["openapi-generate"] || {};
+  } catch {
+    return {};
+  }
+}
+
 export async function run(): Promise<void> {
-  const args = await yargs
-    .pkgConf("openapi-generate")
+  const pkgConf = loadPkgConf();
+  const args = await yargs(process.argv.slice(2))
     .option("input", {
       type: "array",
       describe: "Path of the input file or URL",
       demandOption: true,
-      string: true
+      string: true,
+      default: pkgConf.input
     })
     .option("output", {
       type: "string",
       describe: "Path of output files",
-      demandOption: true
+      demandOption: true,
+      default: pkgConf.output
     })
     .parse();
 
@@ -39,7 +53,7 @@ export async function run(): Promise<void> {
     });
   } catch (err) {
     console.error(err);
-    // eslint-disable-next-line no-process-exit
+
     process.exit(1);
   }
 }

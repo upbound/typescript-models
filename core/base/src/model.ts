@@ -5,7 +5,6 @@ import { TypeMeta } from "./meta";
 function setDefinedProps(src: any, dst: any): any {
   for (const key of Object.keys(src)) {
     if (src[key] !== undefined) {
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
       dst[key] = filterUndefinedValues(src[key]);
     }
   }
