@@ -1,5 +1,6 @@
+---
 name: Install Node.js dependencies
-
+description: runs pnpm install
 inputs:
   node-version:
     description: Node.js version
