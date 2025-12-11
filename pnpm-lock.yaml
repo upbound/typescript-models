@@ -35,6 +35,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^8.49.0
         version: 8.49.0(eslint@9.39.1)(typescript@5.9.3)
+      '@typescript-eslint/utils':
+        specifier: ^8.49.0
+        version: 8.49.0(eslint@9.39.1)(typescript@5.9.3)
       eslint:
         specifier: ^9.39.1
         version: 9.39.1
@@ -202,6 +205,32 @@ importers:
       '@kubernetes-models/publish-scripts':
         specifier: workspace:^
         version: link:../../../internal/publish-scripts
+      vitest:
+        specifier: ^4.0.15
+        version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
+    publishDirectory: dist
+
+  models/crossplane/crossplane/dist:
+    dependencies:
+      '@kubernetes-models/apimachinery':
+        specifier: 2.2.0
+        version: 2.2.0
+      '@kubernetes-models/base':
+        specifier: 5.0.1
+        version: 5.0.1
+      '@kubernetes-models/validate':
+        specifier: 4.0.0
+        version: 4.0.0
+      '@swc/helpers':
+        specifier: ^0.5.8
+        version: 0.5.17
+    devDependencies:
+      '@kubernetes-models/crd-generate':
+        specifier: workspace:^
+        version: link:../../../../utils/crd-generate
+      '@kubernetes-models/publish-scripts':
+        specifier: workspace:^
+        version: link:../../../../internal/publish-scripts
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
