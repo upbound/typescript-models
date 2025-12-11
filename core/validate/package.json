@@ -48,12 +48,12 @@
     "ajv-formats-draft2019": "^1.6.1",
     "ajv-i18n": "^4.2.0",
     "is-cidr": "^4.0.0",
-    "tslib": "^2.4.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "tsc-multi": "^1.1.0",
     "typescript": "^5.9.3",
-    "vitest": "^0.29.8"
+    "vitest": "^4.0.15"
   },
   "optionalDependencies": {
     "re2-wasm": "^1.0.2"

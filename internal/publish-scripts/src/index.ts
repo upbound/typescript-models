@@ -2,7 +2,7 @@ import yargs from "yargs/yargs";
 import { build, BuildArguments } from "./build";
 import { prePack, PrePackArguments } from "./prepack";
 
-yargs(process.argv.slice(2))
+void yargs(process.argv.slice(2))
   .command<BuildArguments>(
     "build",
     "Run build script",

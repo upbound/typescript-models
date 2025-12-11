@@ -2,7 +2,7 @@ import glob from "fast-glob";
 import { writeJSON, pathExists, readJSON } from "fs-extra";
 import { basename, dirname, extname, join, posix } from "path";
 import { copyFile, mkdir, rm, writeFile } from "fs/promises";
-import execa from "execa";
+import { execa } from "execa";
 import * as swc from "@swc/core";
 
 const ECMA_VERSION = 2020;

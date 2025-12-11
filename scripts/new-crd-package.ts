@@ -1,4 +1,3 @@
-/* eslint-disable node/no-unpublished-import */
 import { join } from "path";
 import yargs from "yargs";
 import { mkdir, stat, writeFile } from "fs/promises";

@@ -38,7 +38,7 @@
     "find-cache-dir": "^3.3.2",
     "get-stdin": "^8.0.0",
     "make-fetch-happen": "^10.2.1",
-    "tslib": "^2.4.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@types/find-cache-dir": "^3.2.1",
