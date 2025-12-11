@@ -1,0 +1,71 @@
+{
+  "name": "@crossplane-models/crossplane",
+  "version": "2.1.3-build.1",
+  "description": "Crossplane",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upbound/typescript-models.git"
+  },
+  "homepage": "https://github.com/tommy351/kubernetes-models-ts/tree/master/models/crossplane/crossplane",
+  "author": "Crossplane Maintainers <info@crossplane.io>",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "crd-generate && publish-scripts build",
+    "prepack": "publish-scripts prepack"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist",
+    "linkDirectory": true
+  },
+  "keywords": [
+    "kubernetes",
+    "kubernetes-models",
+    "crossplane"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@kubernetes-models/apimachinery": "2.2.0",
+    "@kubernetes-models/base": "5.0.1",
+    "@kubernetes-models/validate": "4.0.0",
+    "@swc/helpers": "^0.5.8"
+  },
+  "devDependencies": {
+      "@kubernetes-models/crd-generate": "workspace:^",
+      "@kubernetes-models/publish-scripts": "workspace:^",
+      "vitest": "^0.29.8"
+  },
+  "crd-generate": {
+    "input": [
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_compositeresourcedefinitions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_compositeresourcedefinitions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_compositionrevisions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_compositions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_environmentconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_managedresourceactivationpolicies.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_managedresourcedefinitions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_usages.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/ops.crossplane.io_cronoperations.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/ops.crossplane.io_operations.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/ops.crossplane.io_watchoperations.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_configurationrevisions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_configurations.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_deploymentruntimeconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_functionrevisions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_functions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_imageconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_locks.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_providerrevisions.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/pkg.crossplane.io_providers.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/protection.crossplane.io_clusterusages.yaml",
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/protection.crossplane.io_usages.yaml"
+    ],
+    "output": "./gen"
+  }
+}

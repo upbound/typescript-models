@@ -1,5 +1,6 @@
+---
 name: Build packages
-
+description: build using pnpm run build
 runs:
   using: composite
   steps:

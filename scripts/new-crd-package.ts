@@ -68,9 +68,9 @@ const rootDir = join(__dirname, "..");
       node: ">=14"
     },
     dependencies: {
-      "@kubernetes-models/apimachinery": "workspace:^",
-      "@kubernetes-models/base": "workspace:^",
-      "@kubernetes-models/validate": "workspace:^",
+      "@kubernetes-models/apimachinery": "2.2.0",
+      "@kubernetes-models/base": "5.0.1",
+      "@kubernetes-models/validate": "4.0.0",
       "@swc/helpers": "^0.5.8"
     },
     devDependencies: {

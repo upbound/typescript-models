@@ -9,89 +9,89 @@ importers:
   .:
     devDependencies:
       '@changesets/changelog-github':
-        specifier: ^0.5.0
+        specifier: ^0.5.2
         version: 0.5.2(encoding@0.1.13)
       '@changesets/cli':
-        specifier: ^2.27.1
+        specifier: ^2.29.8
         version: 2.29.8(@types/node@18.19.130)
       '@tsconfig/node14':
         specifier: ^1.0.3
         version: 1.0.3
       '@types/node':
-        specifier: ^18.7.23
+        specifier: ^18.19.130
         version: 18.19.130
       '@types/yargs':
-        specifier: ^17.0.13
+        specifier: ^17.0.35
         version: 17.0.35
       '@typescript-eslint/eslint-plugin':
-        specifier: ^5.38.1
-        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint@8.57.1)(typescript@4.9.5)
+        specifier: ^5.62.0
+        version: 5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/parser':
-        specifier: ^5.38.1
-        version: 5.62.0(eslint@8.57.1)(typescript@4.9.5)
+        specifier: ^5.62.0
+        version: 5.62.0(eslint@8.57.1)(typescript@5.9.3)
       eslint:
-        specifier: ^8.24.0
+        specifier: ^8.57.1
         version: 8.57.1
       eslint-config-prettier:
-        specifier: ^9.1.0
+        specifier: ^9.1.2
         version: 9.1.2(eslint@8.57.1)
       eslint-plugin-node:
         specifier: ^11.1.0
         version: 11.1.0(eslint@8.57.1)
       eslint-plugin-prettier:
-        specifier: ^5.1.3
+        specifier: ^5.5.4
         version: 5.5.4(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.7.4)
       eslint-plugin-vitest:
         specifier: ^0.0.57
-        version: 0.0.57(eslint@8.57.1)(typescript@4.9.5)
+        version: 0.0.57(eslint@8.57.1)(typescript@5.9.3)
       execa:
         specifier: ^5.1.1
         version: 5.1.1
       human-id:
-        specifier: ^4.0.0
+        specifier: ^4.1.3
         version: 4.1.3
       husky:
-        specifier: ^8.0.1
+        specifier: ^8.0.3
         version: 8.0.3
       jest-extended:
         specifier: ^3.2.4
         version: 3.2.4
       lint-staged:
-        specifier: ^13.0.3
+        specifier: ^13.3.0
         version: 13.3.0(enquirer@2.4.1)
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
       prettier:
-        specifier: ^3.2.5
+        specifier: ^3.7.4
         version: 3.7.4
       syncpack:
-        specifier: ^8.2.4
+        specifier: ^8.5.14
         version: 8.5.14
       ts-node:
-        specifier: ^10.9.1
-        version: 10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@4.9.5)
+        specifier: ^10.9.2
+        version: 10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@5.9.3)
       tslib:
-        specifier: ^2.4.0
+        specifier: ^2.8.1
         version: 2.8.1
       turbo:
-        specifier: ^2.2.3
+        specifier: ^2.6.3
         version: 2.6.3
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
       vitest:
         specifier: ^0.29.8
         version: 0.29.8
       yargs:
-        specifier: ^17.6.0
+        specifier: ^17.7.2
         version: 17.7.2
 
   core/base:
     dependencies:
       '@kubernetes-models/validate':
-        specifier: workspace:^
-        version: link:../validate
+        specifier: 4.0.0
+        version: 4.0.0
       is-plain-object:
         specifier: ^5.0.0
         version: 5.0.0
@@ -100,11 +100,11 @@ importers:
         version: 2.8.1
     devDependencies:
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
       vitest:
         specifier: ^0.29.8
         version: 0.29.8
@@ -131,11 +131,11 @@ importers:
         version: 2.8.1
     devDependencies:
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
       vitest:
         specifier: ^0.29.8
         version: 0.29.8
@@ -143,88 +143,6 @@ importers:
       re2-wasm:
         specifier: ^1.0.2
         version: 1.0.2
-
-  first-party/apimachinery:
-    dependencies:
-      '@kubernetes-models/base':
-        specifier: workspace:^
-        version: link:../../core/base
-      '@kubernetes-models/validate':
-        specifier: workspace:^
-        version: link:../../core/validate
-      '@swc/helpers':
-        specifier: ^0.5.8
-        version: 0.5.17
-    devDependencies:
-      '@kubernetes-models/openapi-generate':
-        specifier: workspace:^
-        version: link:../../utils/openapi-generate
-      '@kubernetes-models/publish-scripts':
-        specifier: workspace:^
-        version: link:../../internal/publish-scripts
-      '@kubernetes-models/read-input':
-        specifier: workspace:^
-        version: link:../../utils/read-input
-      '@kubernetes-models/string-util':
-        specifier: workspace:^
-        version: link:../../utils/string-util
-      '@types/node':
-        specifier: ^18.7.23
-        version: 18.19.130
-      es-toolkit:
-        specifier: ^1.39.9
-        version: 1.42.0
-      openapi-types:
-        specifier: ^12.0.2
-        version: 12.1.3
-      ts-node:
-        specifier: ^10.9.1
-        version: 10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@4.9.5)
-      typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
-    publishDirectory: dist
-
-  first-party/kubernetes-models:
-    dependencies:
-      '@kubernetes-models/apimachinery':
-        specifier: workspace:^
-        version: link:../apimachinery/dist
-      '@kubernetes-models/base':
-        specifier: workspace:^
-        version: link:../../core/base
-      '@kubernetes-models/validate':
-        specifier: workspace:^
-        version: link:../../core/validate
-      '@swc/helpers':
-        specifier: ^0.5.8
-        version: 0.5.17
-    devDependencies:
-      '@kubernetes-models/openapi-generate':
-        specifier: workspace:^
-        version: link:../../utils/openapi-generate
-      '@kubernetes-models/publish-scripts':
-        specifier: workspace:^
-        version: link:../../internal/publish-scripts
-      '@kubernetes-models/read-input':
-        specifier: workspace:^
-        version: link:../../utils/read-input
-      '@types/node':
-        specifier: ^18.7.23
-        version: 18.19.130
-      openapi-types:
-        specifier: ^12.0.2
-        version: 12.1.3
-      ts-node:
-        specifier: ^10.9.1
-        version: 10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@4.9.5)
-      typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
-      vitest:
-        specifier: ^0.29.8
-        version: 0.29.8
-    publishDirectory: dist
 
   internal/publish-scripts:
     dependencies:
@@ -244,8 +162,8 @@ importers:
         specifier: ^2.4.0
         version: 2.8.1
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
       yargs:
         specifier: ^17.6.0
         version: 17.7.2
@@ -260,14 +178,14 @@ importers:
   models/crossplane/crossplane:
     dependencies:
       '@kubernetes-models/apimachinery':
-        specifier: workspace:^
-        version: link:../../../first-party/apimachinery/dist
+        specifier: 2.2.0
+        version: 2.2.0
       '@kubernetes-models/base':
-        specifier: workspace:^
-        version: link:../../../core/base
+        specifier: 5.0.1
+        version: 5.0.1
       '@kubernetes-models/validate':
-        specifier: workspace:^
-        version: link:../../../core/validate
+        specifier: 4.0.0
+        version: 4.0.0
       '@swc/helpers':
         specifier: ^0.5.8
         version: 0.5.17
@@ -278,19 +196,22 @@ importers:
       '@kubernetes-models/publish-scripts':
         specifier: workspace:^
         version: link:../../../internal/publish-scripts
+      vitest:
+        specifier: ^0.29.8
+        version: 0.29.8
     publishDirectory: dist
 
   utils/crd-generate:
     dependencies:
       '@kubernetes-models/generate':
-        specifier: workspace:^
-        version: link:../generate
+        specifier: 2.5.0
+        version: 2.5.0
       '@kubernetes-models/read-input':
-        specifier: workspace:^
-        version: link:../read-input
+        specifier: 3.1.1
+        version: 3.1.1
       '@kubernetes-models/string-util':
-        specifier: workspace:^
-        version: link:../string-util
+        specifier: 3.0.1
+        version: 3.0.1
       es-toolkit:
         specifier: ^1.39.9
         version: 1.42.0
@@ -308,11 +229,11 @@ importers:
         specifier: ^17.0.13
         version: 17.0.35
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
 
   utils/generate:
     dependencies:
@@ -329,11 +250,11 @@ importers:
         specifier: ^7.24.0
         version: 7.28.5
       '@kubernetes-models/string-util':
-        specifier: workspace:^
-        version: link:../string-util
+        specifier: 3.0.1
+        version: 3.0.1
       '@kubernetes-models/validate':
-        specifier: workspace:^
-        version: link:../../core/validate
+        specifier: 4.0.0
+        version: 4.0.0
       ajv:
         specifier: ^8.12.0
         version: 8.17.1
@@ -366,23 +287,23 @@ importers:
         specifier: ^9.0.13
         version: 9.0.13
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
 
   utils/openapi-generate:
     dependencies:
       '@kubernetes-models/generate':
-        specifier: workspace:^
-        version: link:../generate
+        specifier: 2.5.0
+        version: 2.5.0
       '@kubernetes-models/read-input':
-        specifier: workspace:^
-        version: link:../read-input
+        specifier: 3.1.1
+        version: 3.1.1
       '@kubernetes-models/string-util':
-        specifier: workspace:^
-        version: link:../string-util
+        specifier: 3.0.1
+        version: 3.0.1
       es-toolkit:
         specifier: ^1.39.9
         version: 1.42.0
@@ -397,11 +318,11 @@ importers:
         specifier: ^17.0.13
         version: 17.0.35
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
 
   utils/read-input:
     dependencies:
@@ -425,11 +346,11 @@ importers:
         specifier: ^10.0.0
         version: 10.0.4
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
 
   utils/string-util:
     dependencies:
@@ -438,11 +359,11 @@ importers:
         version: 2.8.1
     devDependencies:
       tsc-multi:
-        specifier: ^0.6.1
-        version: 0.6.1(typescript@4.9.5)
+        specifier: ^1.1.0
+        version: 1.1.0(typescript@5.9.3)
       typescript:
-        specifier: ^4.8.4
-        version: 4.9.5
+        specifier: ^5.9.3
+        version: 5.9.3
 
 packages:
 
@@ -746,6 +667,30 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@kubernetes-models/apimachinery@2.2.0':
+    resolution: {integrity: sha512-7Yj3aMz/nCTdr221wHOMsw5vAMJnLqANMI3BTuCmYjbP+7/tGAaOsiFwT75F4TJH45Dk1P6wcAEqDeCD1ur82Q==}
+    engines: {node: '>=14'}
+
+  '@kubernetes-models/base@5.0.1':
+    resolution: {integrity: sha512-Yfzmh965y/hT8qs9eE+Ms9sO1iT31c/sPoJerBFRGS9KechXXfxHgeqtpOzq+eByQ1INblkcZ09rt2V0FxG0lA==}
+    engines: {node: '>=14'}
+
+  '@kubernetes-models/generate@2.5.0':
+    resolution: {integrity: sha512-atR4FYurdW9J9j7QuJ5EWKD4xW0yme4LZAGHzErT7OwIb2lqP1FxFLGi6Dp6b0UAW5OfVLhwxli9hhsnGX9H1Q==}
+    engines: {node: '>=14'}
+
+  '@kubernetes-models/read-input@3.1.1':
+    resolution: {integrity: sha512-DVc7ZpfPHyvxamyKmEAZ9fqf6jFKhaeACPIDe3aTaGgtcDWnrd3QQSrvnTDtWvcYkhvc7KEwX8rR+YKFueJ2dA==}
+    engines: {node: '>=14'}
+
+  '@kubernetes-models/string-util@3.0.1':
+    resolution: {integrity: sha512-rRtgYoGzxLzahYWtpguEp59mWEjmkuVehquUo0ekPbXdMpgmM3sl/1fsIUpsv1L92lgt48VfTkuwgHAtOEqm4Q==}
+    engines: {node: '>=14'}
+
+  '@kubernetes-models/validate@4.0.0':
+    resolution: {integrity: sha512-rsfF5t3sd5c+3ejUgcy8q0cVG2/BxT064L4Xz+CuKEe014u8T4MtFZiWjWZFpfMXSGKzFYEA6DJYm9CqjmIfZg==}
+    engines: {node: '>=14'}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -1201,9 +1146,6 @@ packages:
   cli-truncate@3.1.0:
     resolution: {integrity: sha512-wfOBkjXteqSnI59oPcJkcPl/ZmwvMMOj340qUIY1SKZCv0B9Cf4D4fAucRkIKQmsIuYK3x1rrgU7MeGRruiuiA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  cliui@7.0.4:
-    resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
 
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
@@ -2266,9 +2208,6 @@ packages:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
     engines: {node: '>=12'}
 
-  openapi-types@12.1.3:
-    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
-
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -2787,8 +2726,9 @@ packages:
   strip-literal@1.3.0:
     resolution: {integrity: sha512-PugKzOsyXpArk0yWmUwqOZecSO0GH0bPoctLcqNDH9J04pVW3lflYE0ujElBGTloevcxF5MofAOZ7C5l2b+wLg==}
 
-  superstruct@0.14.2:
-    resolution: {integrity: sha512-nPewA6m9mR3d6k7WkZ8N8zpTWfenFH3q9pA2PkuiZxINr9DKB2+40wEQf0ixn8VaGuJ78AB6iWOtStI+/4FKZQ==}
+  superstruct@1.0.4:
+    resolution: {integrity: sha512-7JpaAoX2NGyoFlI9NBh66BQXGONc+uE+MRS5i2iOBKuS4e+ccgMDjATgZldkah+33DakBxDHiss9kvUcGAO8UQ==}
+    engines: {node: '>=14.0.0'}
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -2797,10 +2737,6 @@ packages:
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
-
-  supports-color@8.1.1:
-    resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
-    engines: {node: '>=10'}
 
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
@@ -2858,12 +2794,12 @@ packages:
       '@swc/wasm':
         optional: true
 
-  tsc-multi@0.6.1:
-    resolution: {integrity: sha512-1ROeCEj7QJUdHWWhgswQpjUvTYeB8/j9zVVCeSdHPff/q7iCMImn7datQdNW05mzxu3I6F1T060COuHqfaUO3Q==}
-    engines: {node: '>=10'}
+  tsc-multi@1.1.0:
+    resolution: {integrity: sha512-THE6X+sse7EZ2qMhqXvBhd2HMTvXyWwYnx+2T/ijqdp/6Rf7rUc2uPRzPdrrljZCNcYDeL0qP2P7tqm2IwayTg==}
+    engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
-      typescript: '>=3'
+      typescript: '>=4.3.0'
 
   tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
@@ -2943,9 +2879,9 @@ packages:
     resolution: {integrity: sha512-3KS2b+kL7fsuk/eJZ7EQdnEmQoaho/r6KUef7hxvltNA5DR8NAUM+8wJMbJyZ4G9/7i3v5zPBIMN5aybAh2/Jg==}
     engines: {node: '>= 0.4'}
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   ufo@1.6.1:
@@ -3117,17 +3053,9 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  yargs-parser@20.2.9:
-    resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
-    engines: {node: '>=10'}
-
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
-
-  yargs@16.2.0:
-    resolution: {integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==}
-    engines: {node: '>=10'}
 
   yargs@17.7.2:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
@@ -3187,7 +3115,7 @@ snapshots:
       '@babel/parser': 7.28.5
       '@babel/template': 7.27.2
       '@babel/types': 7.28.5
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -3435,7 +3363,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.2
@@ -3453,7 +3381,7 @@ snapshots:
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -3491,6 +3419,61 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@kubernetes-models/apimachinery@2.2.0':
+    dependencies:
+      '@kubernetes-models/base': 5.0.1
+      '@kubernetes-models/validate': 4.0.0
+      '@swc/helpers': 0.5.17
+
+  '@kubernetes-models/base@5.0.1':
+    dependencies:
+      '@kubernetes-models/validate': 4.0.0
+      is-plain-object: 5.0.0
+      tslib: 2.8.1
+
+  '@kubernetes-models/generate@2.5.0':
+    dependencies:
+      '@babel/generator': 7.28.5
+      '@babel/parser': 7.28.5
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
+      '@kubernetes-models/string-util': 3.0.1
+      '@kubernetes-models/validate': 4.0.0
+      ajv: 8.17.1
+      es-toolkit: 1.42.0
+      fs-extra: 10.1.0
+      indent-string: 4.0.0
+      ohash: 1.1.6
+      re2-wasm: 1.0.2
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - supports-color
+
+  '@kubernetes-models/read-input@3.1.1':
+    dependencies:
+      find-cache-dir: 3.3.2
+      get-stdin: 8.0.0
+      make-fetch-happen: 10.2.1
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - bluebird
+      - supports-color
+
+  '@kubernetes-models/string-util@3.0.1':
+    dependencies:
+      tslib: 2.8.1
+
+  '@kubernetes-models/validate@4.0.0':
+    dependencies:
+      ajv: 8.17.1
+      ajv-formats: 2.1.1(ajv@8.17.1)
+      ajv-formats-draft2019: 1.6.1(ajv@8.17.1)
+      ajv-i18n: 4.2.0(ajv@8.17.1)
+      is-cidr: 4.0.2
+      tslib: 2.8.1
+    optionalDependencies:
+      re2-wasm: 1.0.2
 
   '@manypkg/find-root@1.1.0':
     dependencies:
@@ -3654,34 +3637,34 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5))(eslint@8.57.1)(typescript@4.9.5)':
+  '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.9.3))(eslint@8.57.1)(typescript@5.9.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.2
-      '@typescript-eslint/parser': 5.62.0(eslint@8.57.1)(typescript@4.9.5)
+      '@typescript-eslint/parser': 5.62.0(eslint@8.57.1)(typescript@5.9.3)
       '@typescript-eslint/scope-manager': 5.62.0
-      '@typescript-eslint/type-utils': 5.62.0(eslint@8.57.1)(typescript@4.9.5)
-      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@4.9.5)
-      debug: 4.4.3(supports-color@8.1.1)
+      '@typescript-eslint/type-utils': 5.62.0(eslint@8.57.1)(typescript@5.9.3)
+      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@5.9.3)
+      debug: 4.4.3
       eslint: 8.57.1
       graphemer: 1.4.0
       ignore: 5.3.2
       natural-compare-lite: 1.4.0
       semver: 7.7.3
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@4.9.5)':
+  '@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 5.62.0
       '@typescript-eslint/types': 5.62.0
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@4.9.5)
-      debug: 4.4.3(supports-color@8.1.1)
+      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.9.3)
+      debug: 4.4.3
       eslint: 8.57.1
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
@@ -3690,42 +3673,42 @@ snapshots:
       '@typescript-eslint/types': 5.62.0
       '@typescript-eslint/visitor-keys': 5.62.0
 
-  '@typescript-eslint/type-utils@5.62.0(eslint@8.57.1)(typescript@4.9.5)':
+  '@typescript-eslint/type-utils@5.62.0(eslint@8.57.1)(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@4.9.5)
-      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@4.9.5)
-      debug: 4.4.3(supports-color@8.1.1)
+      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.9.3)
+      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@5.9.3)
+      debug: 4.4.3
       eslint: 8.57.1
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
   '@typescript-eslint/types@5.62.0': {}
 
-  '@typescript-eslint/typescript-estree@5.62.0(typescript@4.9.5)':
+  '@typescript-eslint/typescript-estree@5.62.0(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/types': 5.62.0
       '@typescript-eslint/visitor-keys': 5.62.0
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.7.3
-      tsutils: 3.21.0(typescript@4.9.5)
+      tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
-      typescript: 4.9.5
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@5.62.0(eslint@8.57.1)(typescript@4.9.5)':
+  '@typescript-eslint/utils@5.62.0(eslint@8.57.1)(typescript@5.9.3)':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.0(eslint@8.57.1)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.7.1
       '@typescript-eslint/scope-manager': 5.62.0
       '@typescript-eslint/types': 5.62.0
-      '@typescript-eslint/typescript-estree': 5.62.0(typescript@4.9.5)
+      '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.9.3)
       eslint: 8.57.1
       eslint-scope: 5.1.1
       semver: 7.7.3
@@ -3775,7 +3758,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -3986,12 +3969,6 @@ snapshots:
       slice-ansi: 5.0.0
       string-width: 5.1.2
 
-  cliui@7.0.4:
-    dependencies:
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 7.0.0
-
   cliui@8.0.1:
     dependencies:
       string-width: 4.2.3
@@ -4075,11 +4052,9 @@ snapshots:
     dependencies:
       ms: 2.1.2
 
-  debug@4.4.3(supports-color@8.1.1):
+  debug@4.4.3:
     dependencies:
       ms: 2.1.3
-    optionalDependencies:
-      supports-color: 8.1.1
 
   deep-eql@4.1.4:
     dependencies:
@@ -4289,9 +4264,9 @@ snapshots:
     optionalDependencies:
       eslint-config-prettier: 9.1.2(eslint@8.57.1)
 
-  eslint-plugin-vitest@0.0.57(eslint@8.57.1)(typescript@4.9.5):
+  eslint-plugin-vitest@0.0.57(eslint@8.57.1)(typescript@5.9.3):
     dependencies:
-      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@4.9.5)
+      '@typescript-eslint/utils': 5.62.0(eslint@8.57.1)(typescript@5.9.3)
       eslint: 8.57.1
     transitivePeerDependencies:
       - supports-color
@@ -4328,7 +4303,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.6
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -4641,14 +4616,14 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5166,8 +5141,6 @@ snapshots:
     dependencies:
       mimic-fn: 4.0.0
 
-  openapi-types@12.1.3: {}
-
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -5551,7 +5524,7 @@ snapshots:
   socks-proxy-agent@7.0.0:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       socks: 2.8.7
     transitivePeerDependencies:
       - supports-color
@@ -5673,17 +5646,13 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  superstruct@0.14.2: {}
+  superstruct@1.0.4: {}
 
   supports-color@5.5.0:
     dependencies:
       has-flag: 3.0.0
 
   supports-color@7.2.0:
-    dependencies:
-      has-flag: 4.0.0
-
-  supports-color@8.1.1:
     dependencies:
       has-flag: 4.0.0
 
@@ -5731,7 +5700,7 @@ snapshots:
 
   tr46@0.0.3: {}
 
-  ts-node@10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@4.9.5):
+  ts-node@10.9.2(@swc/core@1.15.3(@swc/helpers@0.5.17))(@types/node@18.19.130)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.12
@@ -5745,35 +5714,36 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 4.9.5
+      typescript: 5.9.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     optionalDependencies:
       '@swc/core': 1.15.3(@swc/helpers@0.5.17)
 
-  tsc-multi@0.6.1(typescript@4.9.5):
+  tsc-multi@1.1.0(typescript@5.9.3):
     dependencies:
-      chalk: 4.1.2
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       fast-glob: 3.3.3
       get-stdin: 8.0.0
       p-all: 3.0.0
+      picocolors: 1.1.1
       signal-exit: 3.0.7
       string-to-stream: 3.0.1
-      superstruct: 0.14.2
-      supports-color: 8.1.1
+      superstruct: 1.0.4
       tslib: 2.8.1
-      typescript: 4.9.5
-      yargs: 16.2.0
+      typescript: 5.9.3
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
 
   tslib@1.14.1: {}
 
   tslib@2.8.1: {}
 
-  tsutils@3.21.0(typescript@4.9.5):
+  tsutils@3.21.0(typescript@5.9.3):
     dependencies:
       tslib: 1.14.1
-      typescript: 4.9.5
+      typescript: 5.9.3
 
   turbo-darwin-64@2.6.3:
     optional: true
@@ -5845,7 +5815,7 @@ snapshots:
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
 
-  typescript@4.9.5: {}
+  typescript@5.9.3: {}
 
   ufo@1.6.1: {}
 
@@ -5886,7 +5856,7 @@ snapshots:
   vite-node@0.29.8(@types/node@18.19.130):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       mlly: 1.8.0
       pathe: 1.1.2
       picocolors: 1.1.1
@@ -5923,7 +5893,7 @@ snapshots:
       acorn-walk: 8.3.4
       cac: 6.7.14
       chai: 4.5.0
-      debug: 4.4.3(supports-color@8.1.1)
+      debug: 4.4.3
       local-pkg: 0.4.3
       pathe: 1.1.2
       picocolors: 1.1.1
@@ -6030,19 +6000,7 @@ snapshots:
 
   yaml@2.8.2: {}
 
-  yargs-parser@20.2.9: {}
-
   yargs-parser@21.1.1: {}
-
-  yargs@16.2.0:
-    dependencies:
-      cliui: 7.0.4
-      escalade: 3.2.0
-      get-caller-file: 2.0.5
-      require-directory: 2.1.1
-      string-width: 4.2.3
-      y18n: 5.0.8
-      yargs-parser: 20.2.9
 
   yargs@17.7.2:
     dependencies:

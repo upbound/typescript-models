@@ -40,16 +40,16 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@kubernetes-models/generate": "workspace:^",
-    "@kubernetes-models/read-input": "workspace:^",
-    "@kubernetes-models/string-util": "workspace:^",
+    "@kubernetes-models/generate": "2.5.0",
+    "@kubernetes-models/read-input": "3.1.1",
+    "@kubernetes-models/string-util": "3.0.1",
     "es-toolkit": "^1.39.9",
     "tslib": "^2.4.0",
     "yargs": "^17.6.0"
   },
   "devDependencies": {
     "@types/yargs": "^17.0.13",
-    "tsc-multi": "^0.6.1",
-    "typescript": "^4.8.4"
+    "tsc-multi": "^1.1.0",
+    "typescript": "^5.9.3"
   }
 }

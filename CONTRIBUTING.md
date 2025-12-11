@@ -45,6 +45,7 @@ Create a new CRD package.
 ```sh
 pnpm run new-crd-package \
   --name 'pkg-name' \
+  --organization 'organization' \
   --description 'Package description' \
   --author 'John Doe <john.doe@gmail.com>'
 ```

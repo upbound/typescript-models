@@ -35,13 +35,13 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@kubernetes-models/validate": "workspace:^",
+    "@kubernetes-models/validate": "4.0.0",
     "is-plain-object": "^5.0.0",
     "tslib": "^2.4.0"
   },
   "devDependencies": {
-    "tsc-multi": "^0.6.1",
-    "typescript": "^4.8.4",
+    "tsc-multi": "^1.1.0",
+    "typescript": "^5.9.3",
     "vitest": "^0.29.8"
   }
 }
