@@ -38,7 +38,7 @@
   },
   "devDependencies": {
       "@kubernetes-models/crd-generate": "workspace:^",
-      "@kubernetes-models/publish-scripts": "1.2.0",
+      "@kubernetes-models/publish-scripts": "workspace:^",
       "vitest": "^4.0.15"
   },
   "crd-generate": {
