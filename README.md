@@ -1,4 +1,4 @@
-# kubernetes-models-ts
+# Crossplane Typescript Models
 
 [![](https://img.shields.io/npm/v/kubernetes-models.svg)](https://www.npmjs.com/package/kubernetes-models) ![Test](https://github.com/tommy351/kubernetes-models-ts/workflows/Test/badge.svg)
 

@@ -2,5 +2,4 @@ packages:
   - internal/*
   - core/*
   - utils/*
-  - first-party/*
-  - third-party/*
+  - models/**
