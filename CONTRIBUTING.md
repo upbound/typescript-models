@@ -58,6 +58,8 @@ pnpm install
 
 Add input paths to `crd-generate.input` in `package.json`.
 
+### Option 1: Manually add CRD URLs
+
 ```js
 {
   "crd-generate": {
@@ -70,6 +72,29 @@ Add input paths to `crd-generate.input` in `package.json`.
     "output": "./gen"
   }
 }
+```
+
+### Option 2: Fetch CRD URLs from GitHub
+
+Use the `fetch-github-crds` script to automatically fetch all CRD file URLs from a GitHub repository:
+
+```sh
+# Fetch CRD files from a GitHub repository
+pnpm fetch-github-crds --url "https://github.com/owner/repo/tree/ref/path/to/crds"
+
+# Example: Fetch from crossplane-contrib/provider-upjet-aws
+pnpm fetch-github-crds --url "https://github.com/crossplane-contrib/provider-upjet-aws/tree/main/package/crds"
+
+# Specify a custom output file
+pnpm fetch-github-crds --url "https://github.com/owner/repo/tree/ref/path" --output my-crds.json
+```
+
+This will generate a JSON file containing an array of URLs that you can copy directly into your `package.json`'s `crd-generate.input` field.
+
+**Optional:** For higher GitHub API rate limits (60 requests/hour → 5000 requests/hour), set a GitHub token:
+
+```sh
+export GITHUB_TOKEN="your-token-here"
 ```
 
 Build TypeScript files.
