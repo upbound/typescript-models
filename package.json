@@ -1,6 +1,6 @@
 {
   "name": "@crossplane-models/monorepo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "description": "Crossplane models",
   "repository": {
@@ -22,6 +22,7 @@
     "clean": "pnpm -r --filter '!@crossplane-models/monorepo' exec -- rm -rf dist gen *.tsbuildinfo",
     "test": "vitest",
     "new-crd-package": "ts-node scripts/new-crd-package.ts",
+    "fetch-github-crds": "ts-node scripts/fetch-github-crds.ts",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -34,6 +35,10 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.2",
     "@changesets/cli": "^2.29.8",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^9.39.1",
+    "@octokit/rest": "^22.0.1",
+    "@octokit/auth-token": "^6.0.0",
     "@tsconfig/node14": "^1.0.3",
     "@types/node": "^25.0.0",
     "@types/yargs": "^17.0.35",
@@ -41,8 +46,6 @@
     "@typescript-eslint/parser": "^8.49.0",
     "@typescript-eslint/utils": "^8.49.0",
     "eslint": "^9.39.1",
-    "@eslint/js": "^9.39.1",
-    "@eslint/eslintrc": "^3.3.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-prettier": "^5.5.4",
@@ -75,9 +78,17 @@
     "versionGroups": [
       {
         "label": "Ignore workspace dependencies",
-        "packages": ["**"],
-        "dependencies": ["@kubernetes-models/**"],
-        "dependencyTypes": ["dev", "prod", "peer"],
+        "packages": [
+          "**"
+        ],
+        "dependencies": [
+          "@kubernetes-models/**"
+        ],
+        "dependencyTypes": [
+          "dev",
+          "prod",
+          "peer"
+        ],
         "isIgnored": true
       }
     ]
