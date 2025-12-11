@@ -49,7 +49,7 @@ npm install @crossplane-models/crossplane
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Composition } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1";
+import { Composition } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1";
 
 const composition = new Composition({
     metadata: {
@@ -75,7 +75,7 @@ console.log(dumpYaml(composition));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { CompositionRevision } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1";
+import { CompositionRevision } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1";
 
 const compositionRevision = new CompositionRevision({
     metadata: {
@@ -101,7 +101,7 @@ console.log(dumpYaml(compositionRevision));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { CompositeResourceDefinition } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1";
+import { CompositeResourceDefinition } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1";
 
 const xrd = new CompositeResourceDefinition({
     metadata: {
@@ -129,7 +129,7 @@ console.log(dumpYaml(xrd));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { EnvironmentConfig } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1beta1";
+import { EnvironmentConfig } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1beta1";
 
 const envConfig = new EnvironmentConfig({
     metadata: {
@@ -149,7 +149,7 @@ console.log(dumpYaml(envConfig));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ManagedResourceActivationPolicy } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1alpha1";
+import { ManagedResourceActivationPolicy } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1alpha1";
 
 const activationPolicy = new ManagedResourceActivationPolicy({
     metadata: {
@@ -168,7 +168,7 @@ console.log(dumpYaml(activationPolicy));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ManagedResourceDefinition } from "@crossplane-models/crossplane/gen/apiextensions.crossplane.io/v1alpha1";
+import { ManagedResourceDefinition } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1alpha1";
 
 const mrd = new ManagedResourceDefinition({
     metadata: {
@@ -199,7 +199,7 @@ console.log(dumpYaml(mrd));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { CronOperation } from "@crossplane-models/crossplane/gen/ops.crossplane.io/v1alpha1";
+import { CronOperation } from "@crossplane-models/crossplane/ops.crossplane.io/v1alpha1";
 
 const cronOp = new CronOperation({
     metadata: {
@@ -229,7 +229,7 @@ console.log(dumpYaml(cronOp));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Operation } from "@crossplane-models/crossplane/gen/ops.crossplane.io/v1alpha1";
+import { Operation } from "@crossplane-models/crossplane/ops.crossplane.io/v1alpha1";
 
 const operation = new Operation({
     metadata: {
@@ -254,7 +254,7 @@ console.log(dumpYaml(operation));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { WatchOperation } from "@crossplane-models/crossplane/gen/ops.crossplane.io/v1alpha1";
+import { WatchOperation } from "@crossplane-models/crossplane/ops.crossplane.io/v1alpha1";
 
 const watchOp = new WatchOperation({
     metadata: {
@@ -289,7 +289,7 @@ console.log(dumpYaml(watchOp));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Configuration } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { Configuration } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const config = new Configuration({
     metadata: {
@@ -311,7 +311,7 @@ ConfigurationRevisions are managed by Crossplane.
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ConfigurationRevision } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { ConfigurationRevision } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const configRevision = new ConfigurationRevision({
     metadata: {
@@ -332,7 +332,7 @@ console.log(dumpYaml(configRevision));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { DeploymentRuntimeConfig } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1beta1";
+import { DeploymentRuntimeConfig } from "@crossplane-models/crossplane/pkg.crossplane.io/v1beta1";
 
 const drc = new DeploymentRuntimeConfig({
     metadata: {
@@ -360,7 +360,7 @@ Note that `Function` can cause conflicts with other Typescript types. Import it 
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Function as CrossplaneFunction } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { Function as CrossplaneFunction } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const fn = new CrossplaneFunction({
     metadata: {
@@ -379,7 +379,7 @@ console.log(dumpYaml(fn));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { FunctionRevision } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { FunctionRevision } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const fnRevision = new FunctionRevision({
     metadata: {
@@ -400,7 +400,7 @@ console.log(dumpYaml(fnRevision));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ImageConfig } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1beta1";
+import { ImageConfig } from "@crossplane-models/crossplane/pkg.crossplane.io/v1beta1";
 
 const imageConfig = new ImageConfig({
     metadata: {
@@ -421,7 +421,7 @@ console.log(dumpYaml(imageConfig));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Lock } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1beta1";
+import { Lock } from "@crossplane-models/crossplane/pkg.crossplane.io/v1beta1";
 
 const lock = new Lock({
     metadata: {
@@ -444,7 +444,7 @@ console.log(dumpYaml(lock));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Provider } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { Provider } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const provider = new Provider({
     metadata: {
@@ -464,7 +464,7 @@ console.log(dumpYaml(provider));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ProviderRevision } from "@crossplane-models/crossplane/gen/pkg.crossplane.io/v1";
+import { ProviderRevision } from "@crossplane-models/crossplane/pkg.crossplane.io/v1";
 
 const providerRevision = new ProviderRevision({
     metadata: {
@@ -487,7 +487,7 @@ console.log(dumpYaml(providerRevision));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { ClusterUsage } from "@crossplane-models/crossplane/gen/protection.crossplane.io/v1beta1";
+import { ClusterUsage } from "@crossplane-models/crossplane/protection.crossplane.io/v1beta1";
 
 const clusterUsage = new ClusterUsage({
     metadata: {
@@ -519,7 +519,7 @@ console.log(dumpYaml(clusterUsage));
 
 ```typescript
 import { dumpYaml } from "@kubernetes/client-node";
-import { Usage } from "@crossplane-models/crossplane/gen/protection.crossplane.io/v1beta1";
+import { Usage } from "@crossplane-models/crossplane/protection.crossplane.io/v1beta1";
 
 const usage = new Usage({
     metadata: {
