@@ -13,7 +13,7 @@ describe("Principal", () => {
       },
       spec: {
         forProvider: {
-          applicationIdSelector: {
+          clientIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -48,7 +48,7 @@ describe("Principal", () => {
       },
       spec: {
         forProvider: {
-          applicationIdSelector: {
+          clientIdSelector: {
             matchLabels: {
               app: "my-app"
             }
