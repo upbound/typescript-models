@@ -2,12 +2,12 @@ import { join } from "path";
 import yargs from "yargs";
 import { mkdir, stat, writeFile } from "fs/promises";
 import humanId from "human-id";
-import execa from "execa";
+import { execa } from "execa";
 
 const rootDir = join(__dirname, "..");
 
 (async () => {
-  const args = await yargs
+  const args = await yargs(process.argv.slice(2))
     .option("name", {
       type: "string",
       demandOption: true,
@@ -74,7 +74,8 @@ const rootDir = join(__dirname, "..");
     },
     devDependencies: {
       "@kubernetes-models/crd-generate": "workspace:^",
-      "@kubernetes-models/publish-scripts": "workspace:^"
+      "@kubernetes-models/publish-scripts": "workspace:^",
+      vitest: "^4.0.15"
     },
     "crd-generate": {
       input: [],

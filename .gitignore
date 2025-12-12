@@ -5,7 +5,8 @@ dist/
 gen/
 *.log
 /.vscode/
-
+# Cloned CRD files
+.cache
 # pnpm store dir on GitHub actions
 /.pnpm-store/
 
