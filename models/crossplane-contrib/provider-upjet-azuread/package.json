@@ -1,6 +1,6 @@
 {
   "name": "@crossplane-models/provider-upjet-azuread",
-  "version": "2.2.0-build.1",
+  "version": "2.2.0-build.2",
   "description": "Azure AD Provider",
   "repository": {
     "type": "git",
