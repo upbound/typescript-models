@@ -63,7 +63,7 @@ describe("Certificate", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -103,7 +103,7 @@ describe("Certificate", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -130,7 +130,7 @@ describe("Password", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -169,7 +169,7 @@ describe("Password", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -195,7 +195,7 @@ describe("FederatedIdentityCredential", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }
@@ -233,7 +233,7 @@ describe("FederatedIdentityCredential", () => {
       },
       spec: {
         forProvider: {
-          applicationObjectIdSelector: {
+          applicationIdSelector: {
             matchLabels: {
               app: "my-app"
             }

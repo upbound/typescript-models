@@ -102,7 +102,7 @@ const appCert = new Certificate({
   },
   spec: {
     forProvider: {
-      applicationObjectIdSelector: {
+      applicationIdSelector: {
         matchLabels: {
           app: "my-app",
         },
@@ -133,7 +133,7 @@ const appPassword = new Password({
   },
   spec: {
     forProvider: {
-      applicationObjectIdSelector: {
+      applicationIdSelector: {
         matchLabels: {
           app: "my-app",
         },
@@ -163,7 +163,7 @@ const fedCred = new FederatedIdentityCredential({
   },
   spec: {
     forProvider: {
-      applicationObjectIdSelector: {
+      applicationIdSelector: {
         matchLabels: {
           app: "my-app",
         },
@@ -194,7 +194,7 @@ const sp = new Principal({
   },
   spec: {
     forProvider: {
-      applicationIdSelector: {
+      clientIdSelector: {
         matchLabels: {
           app: "my-app",
         },

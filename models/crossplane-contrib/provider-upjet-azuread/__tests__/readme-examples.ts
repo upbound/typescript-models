@@ -61,7 +61,7 @@ describe("README Examples", () => {
         },
         spec: {
           forProvider: {
-            applicationObjectIdSelector: {
+            applicationIdSelector: {
               matchLabels: {
                 app: "my-app"
               }
@@ -87,7 +87,7 @@ describe("README Examples", () => {
         },
         spec: {
           forProvider: {
-            applicationObjectIdSelector: {
+            applicationIdSelector: {
               matchLabels: {
                 app: "my-app"
               }
@@ -112,7 +112,7 @@ describe("README Examples", () => {
         },
         spec: {
           forProvider: {
-            applicationObjectIdSelector: {
+            applicationIdSelector: {
               matchLabels: {
                 app: "my-app"
               }
@@ -141,7 +141,7 @@ describe("README Examples", () => {
         },
         spec: {
           forProvider: {
-            applicationIdSelector: {
+            clientIdSelector: {
               matchLabels: {
                 app: "my-app"
               }
@@ -292,12 +292,12 @@ describe("README Examples", () => {
               {
                 users: [
                   {
-                    includeUsers: ["All"]
+                    includedUsers: ["All"]
                   }
                 ],
                 applications: [
                   {
-                    includeApplications: ["All"]
+                    includedApplications: ["All"]
                   }
                 ]
               }
