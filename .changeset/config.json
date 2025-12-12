@@ -2,12 +2,12 @@
   "$schema": "https://unpkg.com/@changesets/config@1.6.0/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "tommy351/kubernetes-models-ts" }
+    { "repo": "upbound/typescript-models" }
   ],
   "commit": false,
   "linked": [],
   "access": "public",
-  "baseBranch": "master",
+  "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []
 }

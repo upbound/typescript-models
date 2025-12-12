@@ -97,7 +97,43 @@ This will generate a JSON file containing an array of URLs that you can copy dir
 export GITHUB_TOKEN="your-token-here"
 ```
 
-Build TypeScript files.
+### Option 3: Clone CRDs from GitHub (Recommended for >1000 CRDs)
+
+For repositories with more than 1,000 CRD files, use the `clone-crds` script which clones only the CRD directory using git sparse checkout:
+
+```sh
+# Clone CRDs from a GitHub repository
+npx ts-node scripts/clone-crds.ts \
+  -r https://github.com/crossplane-contrib/provider-upjet-aws \
+  -n provider-upjet-aws \
+  --ref v2.2.0
+
+# Clone and generate JSON file with CRD URLs
+npx ts-node scripts/clone-crds.ts \
+  -r https://github.com/crossplane-contrib/provider-upjet-aws \
+  -n provider-upjet-aws \
+  --ref v2.2.0 \
+  --output crd-urls.json
+```
+
+This will:
+
+1. Clone only the CRD directory from the repository (efficient for large repos)
+2. Copy CRDs to `models/{organization}/{name}/.cache/{ref}/crds`
+3. Optionally generate a JSON file with relative paths (if `--output` is specified)
+
+The generated JSON file will contain relative paths like `./.cache/v2.2.0/crds/file.yaml` that can be directly copied to your `package.json`'s `crd-generate.input` field.
+
+**Options:**
+
+- `-r, --repository`: Git repository URL (required)
+- `-n, --name`: Package name (required)
+- `-o, --organization`: Organization/namespace (default: "crossplane-contrib")
+- `--ref`: Git reference - branch, tag, or commit (default: "HEAD")
+- `--dir`: Path to CRDs directory in repo (default: "package/crds")
+- `--output`: Output JSON file with CRD URLs (optional)
+
+### Build TypeScript Files
 
 ```sh
 pnpm run build
