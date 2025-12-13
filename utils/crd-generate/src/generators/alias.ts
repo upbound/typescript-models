@@ -15,7 +15,19 @@ function generate(map: KeyMap, parent = ""): OutputFile[] {
     const val = map[key];
 
     if (typeof val === "string") {
-      content += `export * from "./${val}";\n`;
+      // On case-insensitive filesystems, importing "./Index" from "index.ts" creates a conflict
+      // Import from IndexResource.ts but export as Index
+      const fileName = val.toLowerCase() === "index" ? `${val}Resource` : val;
+
+      if (val.toLowerCase() === "index") {
+        content += `export { Index } from "./${fileName}";\n`;
+      } else if (val === "Object") {
+        // TypeScript doesn't allow class named "Object" in CommonJS mode
+        // The class is renamed to S3Object, but we export it as Object for compatibility
+        content += `export { S3Object as Object } from "./${val}";\n`;
+      } else {
+        content += `export * from "./${val}";\n`;
+      }
     } else {
       const exportedName = camelCase(key, ".-");
       content += `export * as ${exportedName} from "./${key}/index";\n`;
