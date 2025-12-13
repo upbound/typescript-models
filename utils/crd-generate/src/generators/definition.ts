@@ -22,14 +22,24 @@ function generateDefinition(
   def: Definition
 ): OutputFile {
   const apiVersion = getAPIVersion(gvk);
-  const className = gvk.kind;
-  const interfaceName = `I${className}`;
+  const originalClassName = gvk.kind;
+  // TypeScript doesn't allow class named "Object" in CommonJS mode
+  // Rename it to S3Object while keeping interface as IObject
+  const className =
+    originalClassName === "Object" ? "S3Object" : originalClassName;
+  const interfaceName = `I${originalClassName}`;
   const imports: Import[] = [];
   const interfaceContent = generateInterface(def.schema, {
     includeDescription: true,
     getFieldType
   });
-  const path = `${apiVersion}/${className}.ts`;
+  // On case-insensitive filesystems, Index.ts conflicts with index.ts
+  // Use IndexResource.ts as the filename but keep the class name as Index
+  const fileName =
+    originalClassName.toLowerCase() === "index"
+      ? `${originalClassName}Resource`
+      : originalClassName;
+  const path = `${apiVersion}/${fileName}.ts`;
   let classContent = generateInterface(def.schema, {
     getFieldType(key) {
       if (key.length === 1) {
@@ -65,8 +75,14 @@ constructor(data?: ModelData<${interfaceName}>) {
     path: "@kubernetes-models/apimachinery/apis/meta/v1/ObjectMeta"
   });
 
+  // Use alias for Model base class if className conflicts with reserved names
+  // Note: Object is renamed to S3Object, so only check for Model here
+  const reservedClassNames = ["Model"];
+  const hasConflict = reservedClassNames.includes(className);
+  const baseClassName = hasConflict ? "BaseModel" : "Model";
+
   imports.push({
-    name: "Model",
+    name: hasConflict ? "Model as BaseModel" : "Model",
     path: "@kubernetes-models/base"
   });
 
@@ -107,7 +123,7 @@ constructor(data?: ModelData<${interfaceName}>) {
 
 ${comment}export interface ${interfaceName} ${interfaceContent}
 
-${comment}export class ${className} extends Model<${interfaceName}> implements ${interfaceName} ${classContent}
+${comment}export class ${className} extends ${baseClassName}<${interfaceName}> implements ${interfaceName} ${classContent}
 
 setValidateFunc(${className}, validate as ValidateFunc<${interfaceName}>);
 `

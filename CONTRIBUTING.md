@@ -1,8 +1,17 @@
 # Contributing
 
+Typescript models are generated from Kubernetes CRDs. This document is a guide to adding a provider to the repo.
+
+Models are stored in the [models](models) directory, separated by organization.
+
+## Prerequisites
+
+- [pnpm](https://pnpm.io/installation) for package management and running builds.
+- [turbo](https://turborepo.com/docs/getting-started/installation) for parallel builds.
+
 ## Getting Started
 
-Download dependencies.
+Download dependencies in the [`package.json`](package.json) file:
 
 ```sh
 pnpm install
@@ -10,7 +19,14 @@ pnpm install
 
 ## Developing
 
-Build TypeScript files.
+Clean build files and install packages:
+
+```sh
+pnpm run clean
+pnpm run install
+```
+
+Build TypeScript files and the Provider Models:
 
 ```sh
 pnpm run build
@@ -40,7 +56,7 @@ pnpm run lint
 
 ## Adding a New CRD Package
 
-Create a new CRD package.
+Create a new CRD package. This will create a Typescript project under `models/organization/name`:
 
 ```sh
 pnpm run new-crd-package \
@@ -50,24 +66,91 @@ pnpm run new-crd-package \
   --author 'John Doe <john.doe@gmail.com>'
 ```
 
-Update workspaces.
+### Updating the Project File
 
-```sh
-pnpm install
+Every provider has a `package.json` file that contains information about the model and a list of the CRDs that will be used to generate Typescript types.
+
+Verify fields like `name`, `version`, `repository`, `homepage`, and `author`.
+
+The `input` field of `crd-generate` contains a list of URLs or local CRD files.
+
+```json
+{
+  "name": "@crossplane-models/provider-upjet-azuread",
+  "version": "2.2.0-build.2",
+  "description": "Azure AD Provider",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upbound/typescript-models.git"
+  },
+  "homepage": "https://github.com/upbound/typescript-models/tree/master/models/crossplane-contrib/provider-upjet-azuread",
+  "author": "Crossplane Maintainers <info@crossplane.io>",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "crd-generate && publish-scripts build",
+    "prepack": "publish-scripts prepack"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist",
+    "linkDirectory": true
+  },
+  "keywords": [
+    "kubernetes",
+    "kubernetes-models",
+    "provider-upjet-azuread"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@kubernetes-models/apimachinery": "2.2.0",
+    "@kubernetes-models/base": "5.0.1",
+    "@kubernetes-models/validate": "4.0.0",
+    "@swc/helpers": "^0.5.8"
+  },
+  "devDependencies": {
+    "@kubernetes-models/crd-generate": "workspace:^",
+    "@kubernetes-models/publish-scripts": "workspace:^",
+    "vitest": "^4.0.15"
+  },
+  "crd-generate": {
+    "input": [
+      "list of urls or files..."
+    ],
+    "output": "./gen"
+  }
+}
 ```
 
-Add input paths to `crd-generate.input` in `package.json`.
+There are several ways to populate `crd-generate`:
+
+- Manually adding the values.
+- Using the [`fetch-github-crds.ts`](./scripts/fetch-github-crds.ts) to create a list from a git repo on the web.
+- Cloning the repo locally using the [`clone-crds.ts`](./scripts/clone-crds.ts), which is useful when the repository has over 1,000 CRDs.
 
 ### Option 1: Manually add CRD URLs
+
+The easiest option is adds the URLs or files manually.
+
+Github URLs should point either to the raw content of the file and use a tag reference.
+
+Local CRDs files should be in stored in the repository under the same directory as the provider project.
+
+The generated models will be created in the `gen` directory.
 
 ```js
 {
   "crd-generate": {
     "input": [
-      // Download CRD from a URL
-      "https://example.com/manifest.yaml",
+      // Download CRD from a URL pointing to a tag
+      "https://raw.githubusercontent.com/crossplane/crossplane/refs/tags/v2.1.3/cluster/crds/apiextensions.crossplane.io_compositeresourcedefinitions.yaml",
       // Or use a local file.
-      "./path/to/file.yaml"
+      "./cache/v.2.2.0/crds/xray.aws.upbound.io_samplingrules.yaml"
     ],
     "output": "./gen"
   }
