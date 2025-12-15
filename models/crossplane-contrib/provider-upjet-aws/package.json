@@ -14,7 +14,7 @@
   "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prebuild": "ts-node ../../scripts/clone-crds.ts -r https://github.com/crossplane-contrib/provider-upjet-aws --organization crossplane-contrib -n provider-upjet-aws --ref v2.2.0",
+    "prebuild": "ts-node ../../../scripts/clone-crds.ts -r https://github.com/crossplane-contrib/provider-upjet-aws --organization crossplane-contrib -n provider-upjet-aws --ref v2.2.0",
     "build": "crd-generate && publish-scripts build",
     "prepack": "publish-scripts prepack"
   },
