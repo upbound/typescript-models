@@ -114,5 +114,17 @@ export default defineConfig([
       "@typescript-eslint/ban-ts-comment": "off",
       "n/no-unpublished-import": "off"
     }
+  },
+  {
+    files: [
+      "**/*.config.{js,mjs,ts}",
+      ".vitest/**/*.ts",
+      "scripts/**/*.ts",
+      "eslint.config.mjs"
+    ],
+
+    rules: {
+      "n/no-unpublished-import": "off"
+    }
   }
 ]);
