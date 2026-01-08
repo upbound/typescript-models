@@ -1,6 +1,6 @@
 # Crossplane Typescript Models
 
-[![](https://img.shields.io/npm/v/kubernetes-models.svg)](https://www.npmjs.com/package/kubernetes-models) ![Test](https://github.com/tommy351/kubernetes-models-ts/workflows/Test/badge.svg)
+[![](https://img.shields.io/npm/v/kubernetes-models.svg)](https://www.npmjs.com/package/crossplane-models) ![Test](https://github.com/upbound/typescript-models/workflows/Test/badge.svg)
 
 Kubernetes models in TypeScript.
 
@@ -41,9 +41,12 @@ console.log(dumpYaml(composition));
 
 ## Models
 
-## Core Crossplane
+| CRD Source | NPM link | Local Source |
+| --- | --- | --- |
+| [crossplane](https://github.com/crossplane/crossplane) | [@crossplane-models/crossplane](https://www.npmjs.com/package/@crossplane-models/crossplane) | [models/crossplane/crossplane](models/crossplane/crossplane/) |
+| [provider-upjet-azuread](https://github.com/crossplane-contrib/provider-upjet-azuread) | [@crossplane-models/provider-upjet-azuread](https://www.npmjs.com/package/@crossplane-models/provider-upjet-azuread) | [models/crossplane-contrib/provider-upjet-azuread](models/crossplane-contrib/provider-upjet-azuread/) |
+| [provider-upjet-aws](https://github.com/crossplane-contrib/provider-upjet-aws) | [@crossplane-models/provider-upjet-aws](https://www.npmjs.com/package/@crossplane-models/provider-upjet-aws) | [models/crossplane-contrib/provider-upjet-aws](models/crossplane-contrib/provider-upjet-aws/) |
 
-- [@crossplane-models/crossplane](models/crossplane/crossplane/) - Types for Core Crossplane objects.
 
 ## License
 
