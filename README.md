@@ -2,20 +2,26 @@
 
 [![](https://img.shields.io/npm/v/kubernetes-models.svg)](https://www.npmjs.com/package/crossplane-models) ![Test](https://github.com/upbound/typescript-models/workflows/Test/badge.svg)
 
-Kubernetes models in TypeScript.
+This repository generates Typescript models generated from the Kubernetes Custom Resource Definitions used by Crossplane and the Provider ecosystem.
 
 ## Installation
 
-Install with npm.
+Install with npm. The core Crossplane models are located at:
 
 ```sh
-npm install crossplane-models
+npm install @crossplane-models/crossplane
+```
+
+Provider models are also generated from this repository. See [Models](# Models) for supported providers.
+
+```sh
+npm install @crossplane-models/provider-upjet-aws
 ```
 
 ## Usage
 
 ```typescript
-mport { dumpYaml } from "@kubernetes/client-node";
+import { dumpYaml } from "@kubernetes/client-node";
 import { Composition } from "@crossplane-models/crossplane/apiextensions.crossplane.io/v1";
 
 const composition = new Composition({
