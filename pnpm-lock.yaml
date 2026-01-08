@@ -1,7 +1,7 @@
 lockfileVersion: '9.0'
 
 settings:
-  autoInstallPeers: false
+  autoInstallPeers: true
   excludeLinksFromLockfile: false
 
 importers:
@@ -216,6 +216,32 @@ importers:
         version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
     publishDirectory: dist
 
+  models/crossplane-contrib/provider-upjet-aws/dist:
+    dependencies:
+      '@kubernetes-models/apimachinery':
+        specifier: 2.2.0
+        version: 2.2.0
+      '@kubernetes-models/base':
+        specifier: 5.0.1
+        version: 5.0.1
+      '@kubernetes-models/validate':
+        specifier: 4.0.0
+        version: 4.0.0
+      '@swc/helpers':
+        specifier: ^0.5.8
+        version: 0.5.17
+    devDependencies:
+      '@kubernetes-models/crd-generate':
+        specifier: workspace:^
+        version: link:../../../../utils/crd-generate
+      '@kubernetes-models/publish-scripts':
+        specifier: workspace:^
+        version: link:../../../../internal/publish-scripts
+      vitest:
+        specifier: ^4.0.15
+        version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
+    publishDirectory: dist
+
   models/crossplane-contrib/provider-upjet-azuread:
     dependencies:
       '@kubernetes-models/apimachinery':
@@ -242,6 +268,32 @@ importers:
         version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
     publishDirectory: dist
 
+  models/crossplane-contrib/provider-upjet-azuread/dist:
+    dependencies:
+      '@kubernetes-models/apimachinery':
+        specifier: 2.2.0
+        version: 2.2.0
+      '@kubernetes-models/base':
+        specifier: 5.0.1
+        version: 5.0.1
+      '@kubernetes-models/validate':
+        specifier: 4.0.0
+        version: 4.0.0
+      '@swc/helpers':
+        specifier: ^0.5.8
+        version: 0.5.17
+    devDependencies:
+      '@kubernetes-models/crd-generate':
+        specifier: workspace:^
+        version: link:../../../../utils/crd-generate
+      '@kubernetes-models/publish-scripts':
+        specifier: workspace:^
+        version: link:../../../../internal/publish-scripts
+      vitest:
+        specifier: ^4.0.15
+        version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
+    publishDirectory: dist
+
   models/crossplane/crossplane:
     dependencies:
       '@kubernetes-models/apimachinery':
@@ -263,6 +315,32 @@ importers:
       '@kubernetes-models/publish-scripts':
         specifier: workspace:^
         version: link:../../../internal/publish-scripts
+      vitest:
+        specifier: ^4.0.15
+        version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)
+    publishDirectory: dist
+
+  models/crossplane/crossplane/dist:
+    dependencies:
+      '@kubernetes-models/apimachinery':
+        specifier: 2.2.0
+        version: 2.2.0
+      '@kubernetes-models/base':
+        specifier: 5.0.1
+        version: 5.0.1
+      '@kubernetes-models/validate':
+        specifier: 4.0.0
+        version: 4.0.0
+      '@swc/helpers':
+        specifier: ^0.5.8
+        version: 0.5.17
+    devDependencies:
+      '@kubernetes-models/crd-generate':
+        specifier: workspace:^
+        version: link:../../../../utils/crd-generate
+      '@kubernetes-models/publish-scripts':
+        specifier: workspace:^
+        version: link:../../../../internal/publish-scripts
       vitest:
         specifier: ^4.0.15
         version: 4.0.15(@types/node@25.0.0)(yaml@2.8.2)

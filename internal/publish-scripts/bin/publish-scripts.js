@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require("../dist");
+require("../../publish-scripts/dist");

@@ -1,7 +1,7 @@
 {
   "name": "@crossplane-models/monorepo",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.1",
+  "private": false,
   "description": "Crossplane models",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "lint:syncpack": "syncpack list-mismatches --types dev,prod,peer",
     "build": "turbo run build --concurrency 4",
     "clean": "pnpm -r --filter '!@crossplane-models/monorepo' exec -- rm -rf dist gen *.tsbuildinfo",
+    "clean:cache": "pnpm -r --filter '!@crossplane-models/monorepo' exec -- rm -rf .cache",
     "test": "vitest",
     "new-crd-package": "ts-node scripts/new-crd-package.ts",
     "fetch-github-crds": "ts-node scripts/fetch-github-crds.ts",
