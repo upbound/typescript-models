@@ -1,6 +1,6 @@
 {
   "name": "@crossplane-models/provider-upjet-azuread",
-  "version": "2.2.0-build.2",
+  "version": "2.2.0-build.3",
   "description": "Azure AD Provider",
   "repository": {
     "type": "git",
@@ -14,8 +14,8 @@
   "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "crd-generate && publish-scripts build",
-    "prepack": "publish-scripts prepack"
+    "build": "crd-generate && node ../../../internal/publish-scripts/bin/publish-scripts.js build",
+    "prepack": "node ../../../internal/publish-scripts/bin/publish-scripts.js prepack"
   },
   "publishConfig": {
     "access": "public",
