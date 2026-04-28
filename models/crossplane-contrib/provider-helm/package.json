@@ -1,0 +1,62 @@
+{
+  "name": "@crossplane-models/provider-helm",
+  "version": "1.2.0-build.1",
+  "description": "Helm Provider for Crossplane",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upbound/typescript-models.git"
+  },
+  "homepage": "https://github.com/upbound/typescript-models/tree/master/models/crossplane-contrib/provider-helm",
+  "author": "Crossplane Maintainers <info@crossplane.io>",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "crd-generate && node ../../../internal/publish-scripts/bin/publish-scripts.js build",
+    "prepack": "node ../../../internal/publish-scripts/bin/publish-scripts.js prepack"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist",
+    "linkDirectory": true
+  },
+  "keywords": [
+    "kubernetes",
+    "kubernetes-models",
+    "provider-helm"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "dependencies": {
+    "@kubernetes-models/apimachinery": "2.2.0",
+    "@kubernetes-models/base": "5.0.1",
+    "@kubernetes-models/validate": "4.0.0",
+    "@swc/helpers": "^0.5.8"
+  },
+  "devDependencies": {
+    "@kubernetes-models/crd-generate": "workspace:^",
+    "@kubernetes-models/publish-scripts": "workspace:^",
+    "vitest": "^4.0.15"
+  },
+  "crossplane-provider": {
+    "repository": "crossplane-contrib/provider-helm",
+    "version": "v1.2.0",
+    "crdDir": "package/crds",
+    "fetchStrategy": "url"
+  },
+  "crd-generate": {
+    "input": [
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.crossplane.io_providerconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.crossplane.io_providerconfigusages.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.crossplane.io_releases.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.m.crossplane.io_clusterproviderconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.m.crossplane.io_providerconfigs.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.m.crossplane.io_providerconfigusages.yaml",
+      "https://raw.githubusercontent.com/crossplane-contrib/provider-helm/v1.2.0/package/crds/helm.m.crossplane.io_releases.yaml"
+    ],
+    "output": "./gen"
+  }
+}

@@ -3,6 +3,7 @@ import { readInput } from "@kubernetes-models/read-input";
 import { generate, GenerateOptions } from "./generate";
 import { readFileSync } from "fs";
 import { join } from "path";
+import fg from "fast-glob";
 
 async function readFiles(paths: string[]): Promise<string> {
   const documents: string[] = [];
@@ -13,6 +14,24 @@ async function readFiles(paths: string[]): Promise<string> {
   }
 
   return documents.join("\n---\n");
+}
+
+async function expandInputs(inputs: string[]): Promise<string[]> {
+  const expanded: string[] = [];
+
+  for (const input of inputs) {
+    if (input.startsWith("http://") || input.startsWith("https://")) {
+      expanded.push(input);
+    } else if (fg.isDynamicPattern(input)) {
+      const matches = await fg(input, { dot: false });
+      matches.sort();
+      expanded.push(...matches);
+    } else {
+      expanded.push(input);
+    }
+  }
+
+  return expanded;
 }
 
 function loadPkgConf(): Record<string, any> {
@@ -30,7 +49,7 @@ export async function run(): Promise<void> {
   const args = await yargs(process.argv.slice(2))
     .option("input", {
       type: "array",
-      describe: "Path of the input file or URL",
+      describe: "Path of the input file, URL, or glob pattern",
       string: true,
       demandOption: true,
       default: pkgConf.input
@@ -50,8 +69,9 @@ export async function run(): Promise<void> {
     .parse();
 
   try {
+    const expandedInputs = await expandInputs(args.input);
     await generate({
-      input: await readFiles(args.input),
+      input: await readFiles(expandedInputs),
       outputPath: args.output,
       yamlVersion: args.yamlVersion as GenerateOptions["yamlVersion"]
     });

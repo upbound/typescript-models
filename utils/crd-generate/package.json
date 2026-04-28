@@ -44,6 +44,7 @@
     "@kubernetes-models/read-input": "3.1.1",
     "@kubernetes-models/string-util": "3.0.1",
     "es-toolkit": "^1.39.9",
+    "fast-glob": "^3.2.12",
     "tslib": "^2.8.1",
     "yaml": "^2.2.2",
     "yargs": "^18.0.0"

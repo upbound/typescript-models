@@ -1,12 +1,12 @@
 {
-  "name": "@crossplane-models/provider-upjet-aws",
+  "name": "@crossplane-models/provider-upjet-gcp",
   "version": "2.5.0-build.1",
-  "description": "AWS provider for Crossplane",
+  "description": "GCP Provider for Crossplane",
   "repository": {
     "type": "git",
     "url": "https://github.com/upbound/typescript-models.git"
   },
-  "homepage": "https://github.com/upbound/typescript-models/tree/master/models/crossplane-contrib/provider-upjet-aws",
+  "homepage": "https://github.com/upbound/typescript-models/tree/master/models/crossplane-contrib/provider-upjet-gcp",
   "author": "Crossplane Maintainers <info@crossplane.io>",
   "license": "Apache-2.0",
   "main": "index.js",
@@ -14,9 +14,9 @@
   "types": "index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prebuild": "ts-node ../../../scripts/clone-crds.ts -r https://github.com/crossplane-contrib/provider-upjet-aws --organization crossplane-contrib -n provider-upjet-aws --ref v2.5.0",
+    "prebuild": "ts-node ../../../scripts/clone-crds.ts -r https://github.com/crossplane-contrib/provider-upjet-gcp --organization crossplane-contrib -n provider-upjet-gcp --ref v2.5.0",
     "build": "crd-generate && node ../../../internal/publish-scripts/bin/publish-scripts.js build",
-    "prepack": "publish-scripts prepack"
+    "prepack": "node ../../../internal/publish-scripts/bin/publish-scripts.js prepack"
   },
   "publishConfig": {
     "access": "public",
@@ -26,7 +26,7 @@
   "keywords": [
     "kubernetes",
     "kubernetes-models",
-    "provider-upjet-aws"
+    "provider-upjet-gcp"
   ],
   "engines": {
     "node": ">=14"
@@ -43,7 +43,7 @@
     "vitest": "^4.0.15"
   },
   "crossplane-provider": {
-    "repository": "crossplane-contrib/provider-upjet-aws",
+    "repository": "crossplane-contrib/provider-upjet-gcp",
     "version": "v2.5.0",
     "crdDir": "package/crds",
     "fetchStrategy": "clone"

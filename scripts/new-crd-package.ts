@@ -27,6 +27,23 @@ const rootDir = join(__dirname, "..");
       default: "Crossplane Maintainers <info@crossplane.io>",
       description: "Package author"
     })
+    .option("repository", {
+      type: "string",
+      description:
+        "Upstream GitHub repository slug (e.g., crossplane-contrib/provider-upjet-azure). " +
+        "Used by automated update checks."
+    })
+    .option("provider-version", {
+      type: "string",
+      description: "Initial upstream provider version (e.g., v1.0.0)"
+    })
+    .option("fetch-strategy", {
+      type: "string",
+      choices: ["clone", "url"] as const,
+      default: "url",
+      description:
+        '"clone" for large providers (>1000 CRDs), "url" for smaller ones'
+    })
     .parse();
 
   const pkgDir = join(rootDir, "models", args.organization, args.name);
@@ -77,6 +94,16 @@ const rootDir = join(__dirname, "..");
       "@kubernetes-models/publish-scripts": "workspace:^",
       vitest: "^4.0.15"
     },
+    ...(args.repository
+      ? {
+          "crossplane-provider": {
+            repository: args.repository,
+            version: args["provider-version"] ?? "v0.0.0",
+            crdDir: "package/crds",
+            fetchStrategy: args["fetch-strategy"]
+          }
+        }
+      : {}),
     "crd-generate": {
       input: [],
       output: "./gen"

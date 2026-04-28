@@ -54,6 +54,34 @@ Lint TypeScript and JavaScript files.
 pnpm run lint
 ```
 
+## Updating an Existing Provider to a New Version
+
+The fastest way to bump a provider to its latest upstream release is the `update-provider` script. It updates `package.json`, rewrites the CRD input list, and creates a changeset automatically.
+
+```sh
+# Bump a specific provider to a given version
+pnpm update-provider --name provider-upjet-azure --version v2.6.0
+
+# Short form
+pnpm update-provider -n provider-kubernetes -v v1.3.0
+```
+
+Set `GITHUB_TOKEN` for higher GitHub API rate limits (required for URL-based providers with many CRDs):
+
+```sh
+GITHUB_TOKEN=ghp_... pnpm update-provider -n provider-upjet-azuread -v v2.3.0
+```
+
+After running the script, commit the changes and open a PR. The changeset file in `.changeset/` ensures a new npm release is triggered automatically on merge.
+
+### Automated Provider Updates
+
+Provider versions are also checked automatically every Monday by the [Update Providers](.github/workflows/update-providers.yml) workflow. When a new upstream release is detected the workflow opens a PR with all version bumps pre-applied. Simply review and merge it.
+
+To trigger the check manually, go to **Actions → Update Providers → Run workflow**.
+
+---
+
 ## Adding a New CRD Package
 
 Create a new CRD package. This will create a Typescript project under `models/organization/name`:
@@ -64,6 +92,18 @@ pnpm run new-crd-package \
   --organization 'organization' \
   --description 'Package description' \
   --author 'John Doe <john.doe@gmail.com>'
+```
+
+Pass `--repository` and `--provider-version` to opt the new package into automated update checks:
+
+```sh
+pnpm run new-crd-package \
+  --name 'provider-upjet-foo' \
+  --organization 'crossplane-contrib' \
+  --description 'Foo Provider' \
+  --repository 'crossplane-contrib/provider-upjet-foo' \
+  --provider-version 'v1.0.0' \
+  --fetch-strategy clone
 ```
 
 ### Updating the Project File
