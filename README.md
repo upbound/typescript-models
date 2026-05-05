@@ -50,8 +50,12 @@ console.log(dumpYaml(composition));
 | CRD Source | NPM link | Local Source |
 | --- | --- | --- |
 | [crossplane](https://github.com/crossplane/crossplane) | [@crossplane-models/crossplane](https://www.npmjs.com/package/@crossplane-models/crossplane) | [models/crossplane/crossplane](models/crossplane/crossplane/) |
-| [provider-upjet-azuread](https://github.com/crossplane-contrib/provider-upjet-azuread) | [@crossplane-models/provider-upjet-azuread](https://www.npmjs.com/package/@crossplane-models/provider-upjet-azuread) | [models/crossplane-contrib/provider-upjet-azuread](models/crossplane-contrib/provider-upjet-azuread/) |
 | [provider-upjet-aws](https://github.com/crossplane-contrib/provider-upjet-aws) | [@crossplane-models/provider-upjet-aws](https://www.npmjs.com/package/@crossplane-models/provider-upjet-aws) | [models/crossplane-contrib/provider-upjet-aws](models/crossplane-contrib/provider-upjet-aws/) |
+| [provider-upjet-azure](https://github.com/crossplane-contrib/provider-upjet-azure) | [@crossplane-models/provider-upjet-azure](https://www.npmjs.com/package/@crossplane-models/provider-upjet-azure) | [models/crossplane-contrib/provider-upjet-azure](models/crossplane-contrib/provider-upjet-azure/) |
+| [provider-upjet-azuread](https://github.com/crossplane-contrib/provider-upjet-azuread) | [@crossplane-models/provider-upjet-azuread](https://www.npmjs.com/package/@crossplane-models/provider-upjet-azuread) | [models/crossplane-contrib/provider-upjet-azuread](models/crossplane-contrib/provider-upjet-azuread/) |
+| [provider-upjet-gcp](https://github.com/crossplane-contrib/provider-upjet-gcp) | [@crossplane-models/provider-upjet-gcp](https://www.npmjs.com/package/@crossplane-models/provider-upjet-gcp) | [models/crossplane-contrib/provider-upjet-gcp](models/crossplane-contrib/provider-upjet-gcp/) |
+| [provider-kubernetes](https://github.com/crossplane-contrib/provider-kubernetes) | [@crossplane-models/provider-kubernetes](https://www.npmjs.com/package/@crossplane-models/provider-kubernetes) | [models/crossplane-contrib/provider-kubernetes](models/crossplane-contrib/provider-kubernetes/) |
+| [provider-helm](https://github.com/crossplane-contrib/provider-helm) | [@crossplane-models/provider-helm](https://www.npmjs.com/package/@crossplane-models/provider-helm) | [models/crossplane-contrib/provider-helm](models/crossplane-contrib/provider-helm/) |
 
 
 ## License
