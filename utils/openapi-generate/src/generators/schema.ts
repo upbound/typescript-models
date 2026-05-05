@@ -22,7 +22,7 @@ function replaceRef(schema: Schema): Schema {
 }
 
 function transformSchema(def: Definition): Schema {
-  let schema: Schema = {};
+  let schema: Schema;
 
   // Rewrite schemas for some special types
   switch (def.schemaId) {

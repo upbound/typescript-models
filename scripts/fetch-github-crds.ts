@@ -93,13 +93,17 @@ async function fetchCRDFiles(
     return yamlFiles;
   } catch (error: any) {
     if (error.status === 404) {
+      // eslint-disable-next-line n/no-unsupported-features/es-syntax
       throw new Error(
-        `Repository path not found: ${owner}/${repo}/${path} (ref: ${ref})`
+        `Repository path not found: ${owner}/${repo}/${path} (ref: ${ref})`,
+        { cause: error }
       );
     }
     if (error.status === 403) {
+      // eslint-disable-next-line n/no-unsupported-features/es-syntax
       throw new Error(
-        `GitHub API rate limit exceeded. Set GITHUB_TOKEN environment variable for higher limits.`
+        `GitHub API rate limit exceeded. Set GITHUB_TOKEN environment variable for higher limits.`,
+        { cause: error }
       );
     }
     throw error;
