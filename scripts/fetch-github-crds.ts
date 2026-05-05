@@ -94,12 +94,14 @@ async function fetchCRDFiles(
   } catch (error: any) {
     if (error.status === 404) {
       throw new Error(
-        `Repository path not found: ${owner}/${repo}/${path} (ref: ${ref})`
+        `Repository path not found: ${owner}/${repo}/${path} (ref: ${ref})`,
+        { cause: error }
       );
     }
     if (error.status === 403) {
       throw new Error(
-        `GitHub API rate limit exceeded. Set GITHUB_TOKEN environment variable for higher limits.`
+        `GitHub API rate limit exceeded. Set GITHUB_TOKEN environment variable for higher limits.`,
+        { cause: error }
       );
     }
     throw error;

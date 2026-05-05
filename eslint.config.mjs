@@ -1,6 +1,6 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import vitest from "eslint-plugin-vitest";
+import vitest from "@vitest/eslint-plugin";
 import nodePlugin from "eslint-plugin-n";
 import tsParser from "@typescript-eslint/parser";
 import path from "node:path";
@@ -35,7 +35,7 @@ export default defineConfig([
 
     languageOptions: {
       parser: tsParser,
-      ecmaVersion: 2018,
+      ecmaVersion: "latest",
       sourceType: "script"
     },
 
