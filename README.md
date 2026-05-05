@@ -1,3 +1,6 @@
+
+**This repo has been archived. All future work will be performed in the crossplane-contrib org at <https://github.com/crossplane-contrib/typescript-models>**
+
 # Crossplane Typescript Models
 
 [![](https://img.shields.io/npm/v/kubernetes-models.svg)](https://www.npmjs.com/package/crossplane-models) ![Test](https://github.com/upbound/typescript-models/workflows/Test/badge.svg)
